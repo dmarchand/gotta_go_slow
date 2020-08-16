@@ -25,7 +25,7 @@ public class DebrisFallingController : MonoBehaviour
     }
 
     private float CalculateFallSpeed() {
-        float fallSpeed = debrisConfigurationController.BaseFallSpeed;
+        float fallSpeed = 0;
         fallSpeed += SpeedControlManager.CurrentGameSpeed;
         fallSpeed *= Time.deltaTime;
         

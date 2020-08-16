@@ -27,6 +27,7 @@ public class DifficultyManager : MonoBehaviour
         public float SpawnTimeMinimum;
         public float SpawnTimeMaximum;
         public float BaseGameSpeed;
+        public float MinimumGameSpeed;
         public float CollisionSpeedMultiplier;
 
         public List<EnemyProbability> SpawnableItems;

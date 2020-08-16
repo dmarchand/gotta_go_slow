@@ -16,5 +16,6 @@ public class PlayerCollisionEventController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         Destroy(collision.gameObject);
         SpeedControlManager.CurrentGameSpeed *= SpeedControlManager.CurrentCollisionSpeedReduction;
+        SpeedControlManager.CurrentGameSpeed = SpeedControlManager.ComputedGameSpeed;
     }
 }

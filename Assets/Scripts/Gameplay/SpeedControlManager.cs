@@ -11,4 +11,20 @@ public class SpeedControlManager : MonoBehaviour
     public float CurrentGameSpeed;
     [HideInInspector]
     public float CurrentCollisionSpeedReduction;
+
+    public float ComputedGameSpeed {
+        get {
+            return Mathf.Min(DifficultyManager.CurrentLevel.MinimumGameSpeed, CurrentGameSpeed);
+        }
+    }
+
+    private DifficultyManager DifficultyManager;
+
+    private void Awake() {
+        DifficultyManager = GetComponent<DifficultyManager>();
+
+        if(DifficultyManager == null) {
+            throw new MissingComponentException("No DifficultyManager found");
+        }
+    }
 }
