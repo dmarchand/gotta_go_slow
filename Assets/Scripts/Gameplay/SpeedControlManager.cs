@@ -5,12 +5,10 @@ using UnityEngine;
 public class SpeedControlManager : MonoBehaviour
 {
     public float BaseGameSpeed;
-    public float CollisionSpeedReduction;
+    public float BaseCollisionSpeedReduction;
 
     [HideInInspector]
     public float CurrentGameSpeed;
-
-    private void Awake() {
-        CurrentGameSpeed = BaseGameSpeed;
-    }
+    [HideInInspector]
+    public float CurrentCollisionSpeedReduction;
 }
