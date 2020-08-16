@@ -31,6 +31,8 @@ public class DifficultyManager : MonoBehaviour
         public float CollisionSpeedMultiplier;
         public float SpeedIncrementValue;
         public float SpeedIncrementDelay;
+        public float MaxSpeedBeforeDeath;
+        public float TimeUntilReactorMeltdown;
 
         public List<EnemyProbability> SpawnableItems;
     }

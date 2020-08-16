@@ -103,6 +103,7 @@ MonoBehaviour:
     CollisionSpeedMultiplier: 0.5
     SpeedIncrementValue: 0.2
     SpeedIncrementDelay: 1
+    MaxSpeedBeforeDeath: 10
     SpawnableItems:
     - Probability: 100
       Enemy: {fileID: 2168301014120729846, guid: 5dd251bf1c773f44099b140867dc0441, type: 3}
