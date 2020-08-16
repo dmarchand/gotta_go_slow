@@ -14,13 +14,13 @@ public class PlayerInputController : MonoBehaviour {
         var playerActionMap = playerControls.FindActionMap("Player");
 
         if (playerActionMap == null) {
-            throw new System.MissingMemberException("No Player Action Map found. Did you rename the Player Action Map?");
+            throw new MissingComponentException("No Player Action Map found. Did you rename the Player Action Map?");
         }
 
         movement = playerActionMap.FindAction("Move");
 
         if (movement == null) {
-            throw new System.MissingMemberException("No movement action found in the Player Action Map");
+            throw new MissingComponentException("No movement action found in the Player Action Map");
         }
 
         movement.performed += FireMoveEvent;
@@ -30,7 +30,7 @@ public class PlayerInputController : MonoBehaviour {
         playerStatsController = GetComponent<PlayerStatsController>();
 
         if (playerStatsController == null) {
-            throw new System.MissingMemberException("Did you forget the player stats controller?");
+            throw new MissingComponentException("Did you forget the player stats controller?");
         }
     }
 

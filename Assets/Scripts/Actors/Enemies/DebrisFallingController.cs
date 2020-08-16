@@ -5,12 +5,18 @@ using UnityEngine;
 public class DebrisFallingController : MonoBehaviour
 {
     private DebrisConfigurationController debrisConfigurationController;
+    private SpeedControlManager SpeedControlManager;
 
     private void Awake() {
         debrisConfigurationController = GetComponent<DebrisConfigurationController>();    
 
         if(debrisConfigurationController == null) {
-            throw new System.MissingMemberException("No DebrisConfigurationController found");
+            throw new MissingComponentException("No DebrisConfigurationController found");
+        }
+
+        SpeedControlManager = GameObject.Find("SpeedControlManager").GetComponent<SpeedControlManager>();
+        if (SpeedControlManager == null) {
+            throw new MissingComponentException("Where's the SpeedControlManager?");
         }
     }
 
@@ -20,9 +26,9 @@ public class DebrisFallingController : MonoBehaviour
 
     private float CalculateFallSpeed() {
         float fallSpeed = debrisConfigurationController.BaseFallSpeed;
+        fallSpeed += SpeedControlManager.CurrentGameSpeed;
         fallSpeed *= Time.deltaTime;
-        // Add base game speed here
-
+        
         return -fallSpeed;
     }
 }
