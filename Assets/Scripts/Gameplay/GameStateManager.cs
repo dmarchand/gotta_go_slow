@@ -7,6 +7,10 @@ public class GameStateManager : MonoBehaviour
     public SpeedControlManager SpeedControlManager;
     public PlayerStatsManager PlayerStatsManager;
     public DifficultyManager DifficultyManager;
+    public EntitySpawnManager EntitySpawnManager;
+
+    [HideInInspector]
+    public int CurrentStage = 1;
 
     private void Awake() {
         if(SpeedControlManager == null) {
@@ -20,6 +24,10 @@ public class GameStateManager : MonoBehaviour
         if(DifficultyManager == null) {
             throw new MissingComponentException("No DifficultyManager assigned!");
         }
+
+        if(EntitySpawnManager == null) {
+            throw new MissingComponentException("No EntitySpawnManager assigned!");
+        }
     }
 
     private void Start() {
@@ -27,8 +35,12 @@ public class GameStateManager : MonoBehaviour
     }
 
     public void StartNewGame() {
-        var firstLevel = DifficultyManager.Difficulties[0];
+        CurrentStage = 1;
+
+        var firstLevel = DifficultyManager.Difficulties[CurrentStage - 1];
         SpeedControlManager.CurrentGameSpeed = firstLevel.BaseGameSpeed;
         SpeedControlManager.CurrentCollisionSpeedReduction = firstLevel.CollisionSpeedMultiplier;
+
+        EntitySpawnManager.StartLevel();
     }
 }

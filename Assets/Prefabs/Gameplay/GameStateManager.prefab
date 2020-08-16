@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4233686481815723424}
   - component: {fileID: 4233686481815723439}
   - component: {fileID: 249256118}
+  - component: {fileID: 2620994395235544854}
   m_Layer: 0
   m_Name: GameStateManager
   m_TagString: Untagged
@@ -49,6 +50,8 @@ MonoBehaviour:
   SpeedControlManager: {fileID: 4233686481815723439}
   PlayerStatsManager: {fileID: 4233686481815723424}
   DifficultyManager: {fileID: 249256118}
+  EntitySpawnManager: {fileID: 2620994395235544854}
+  CurrentStage: 1
 --- !u!114 &4233686481815723424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,5 +91,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c292b96c24b27e4fbc84fee0c67901d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Difficulties:
+  - SpawnTimeMinimum: 0.5
+    SpawnTimeMaximum: 2
+    BaseGameSpeed: 1
+    CollisionSpeedMultiplier: 0.5
+    SpawnableItems:
+    - Probability: 100
+      Enemy: {fileID: 2168301014120729846, guid: 5dd251bf1c773f44099b140867dc0441, type: 3}
+--- !u!114 &2620994395235544854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4233686481815723437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e12dc07040cbb408d6cb1b091b94af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

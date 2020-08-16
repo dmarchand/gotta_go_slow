@@ -14,7 +14,7 @@ public class DebrisFallingController : MonoBehaviour
             throw new MissingComponentException("No DebrisConfigurationController found");
         }
 
-        SpeedControlManager = GameObject.Find("SpeedControlManager").GetComponent<SpeedControlManager>();
+        SpeedControlManager = GameObject.Find("GameStateManager").GetComponent<SpeedControlManager>();
         if (SpeedControlManager == null) {
             throw new MissingComponentException("Where's the SpeedControlManager?");
         }
