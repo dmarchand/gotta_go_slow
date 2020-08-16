@@ -5,11 +5,13 @@ using System.Linq;
 
 public class EntitySpawnManager : MonoBehaviour
 {
+    public float YSpawn;
+    public float XSpawnMin, XSpawnMax;
+
     private DifficultyManager DifficultyManager;
     private GameStateManager GameStateManager;
 
     private int currentLevel;
-    private bool activelySpawning;
 
     private void Awake() {
         DifficultyManager = GetComponent<DifficultyManager>();
@@ -29,9 +31,6 @@ public class EntitySpawnManager : MonoBehaviour
         currentLevel = GameStateManager.CurrentStage;
 
         StopAllCoroutines();
-
-        activelySpawning = false;
-
         StartCoroutine(SpawnEnemy());
     }
 
@@ -46,8 +45,9 @@ public class EntitySpawnManager : MonoBehaviour
         yield return new WaitForSeconds(spawnTime);
 
         var enemyToSpawn = SelectEnemy(currentDifficultyConfiguration);
+        float xSpawn = Random.Range(XSpawnMin, XSpawnMax);
 
-        Instantiate(enemyToSpawn, new Vector3(0, 0), Quaternion.identity);
+        Instantiate(enemyToSpawn, new Vector3(xSpawn, YSpawn), Quaternion.identity);
 
         StartCoroutine(SpawnEnemy());
     }

@@ -14,7 +14,7 @@ public class SpeedControlManager : MonoBehaviour
 
     public float ComputedGameSpeed {
         get {
-            return Mathf.Min(DifficultyManager.CurrentLevel.MinimumGameSpeed, CurrentGameSpeed);
+            return Mathf.Max(DifficultyManager.CurrentLevel.MinimumGameSpeed, CurrentGameSpeed);
         }
     }
 

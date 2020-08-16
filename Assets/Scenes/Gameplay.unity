@@ -131,17 +131,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 249256118, guid: beb96bcd69206b741b8a5631565e3730, type: 3}
-      propertyPath: Difficulties.Array.data[0].SpawnableItems.Array.size
+      propertyPath: Difficulties.Array.data[0].MinimumGameSpeed
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 249256118, guid: beb96bcd69206b741b8a5631565e3730, type: 3}
-      propertyPath: Difficulties.Array.data[0].SpawnableItems.Array.data[0].Probability
-      value: 100
+      propertyPath: Difficulties.Array.data[0].BaseGameSpeed
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 249256118, guid: beb96bcd69206b741b8a5631565e3730, type: 3}
-      propertyPath: Difficulties.Array.data[0].SpawnableItems.Array.data[0].Enemy
-      value: 
-      objectReference: {fileID: 2168301014120729846, guid: 5dd251bf1c773f44099b140867dc0441, type: 3}
     - target: {fileID: 4233686481815723437, guid: beb96bcd69206b741b8a5631565e3730, type: 3}
       propertyPath: m_Name
       value: GameStateManager
@@ -262,7 +258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4553053282474341131, guid: 8196468fb6ee6d94fbee95ad69a9a251, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.53
       objectReference: {fileID: 0}
     - target: {fileID: 4553053282474341131, guid: 8196468fb6ee6d94fbee95ad69a9a251, type: 3}
       propertyPath: m_LocalPosition.z

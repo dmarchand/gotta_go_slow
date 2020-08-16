@@ -97,6 +97,7 @@ MonoBehaviour:
   - SpawnTimeMinimum: 0.5
     SpawnTimeMaximum: 2
     BaseGameSpeed: 1
+    MinimumGameSpeed: 0
     CollisionSpeedMultiplier: 0.5
     SpawnableItems:
     - Probability: 100
@@ -113,3 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e12dc07040cbb408d6cb1b091b94af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  YSpawn: 6
+  XSpawnMin: -4
+  XSpawnMax: 4
